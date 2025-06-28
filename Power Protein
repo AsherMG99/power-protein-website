@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Power Protein</title>
+  <style>
+    body {
+      font-family: 'Arial', sans-serif;
+      background: #f9f9f9;
+      color: #333;
+      margin: 0;
+      padding: 0;
+    }
+    header {
+      background: #111;
+      color: white;
+      padding: 20px;
+      text-align: center;
+    }
+    header h1 {
+      margin: 0;
+      font-size: 2.5rem;
+    }
+    nav {
+      background: #222;
+      text-align: center;
+      padding: 10px;
+    }
+    nav button {
+      background: #ff5c5c;
+      color: white;
+      border: none;
+      margin: 5px;
+      padding: 10px 20px;
+      cursor: pointer;
+      border-radius: 6px;
+    }
+    .products {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      padding: 20px;
+    }
+    .product {
+      background: white;
+      border-radius: 8px;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+      margin: 10px;
+      padding: 15px;
+      width: 250px;
+      text-align: center;
+    }
+    .product img {
+      width: 100%;
+      height: 180px;
+      object-fit: cover;
+      border-radius: 8px;
+    }
+    footer {
+      background: #111;
+      color: white;
+      text-align: center;
+      padding: 20px;
+      margin-top: 30px;
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    <h1>Power Protein</h1>
+    <p>Protein snacks that power your day.</p>
+  </header>
+
+  <nav>
+    <button onclick="filterProducts('all')">All</button>
+    <button onclick="filterProducts('brownie')">Brownies</button>
+    <button onclick="filterProducts('krispie')">Rice Krispies</button>
+    <button onclick="filterProducts('merch')">Merch</button>
+    <button onclick="filterProducts('other')">Other</button>
+  </nav>
+
+  <section class="products" id="product-list">
+    <!-- Products -->
+    <div class="product brownie">
+      <img src="https://via.placeholder.com/250x180?text=Protein+Brownie" alt="Brownie">
+      <h3>Chocolate Protein Brownie</h3>
+      <p>15g protein, low sugar</p>
+    </div>
+
+    <div class="product krispie">
+      <img src="https://via.placeholder.com/250x180?text=Protein+Krispie" alt="Rice Krispie">
+      <h3>Vanilla Protein Krispie</h3>
+      <p>12g protein, gluten-free</p>
+    </div>
+
+    <div class="product merch">
+      <img src="https://via.placeholder.com/250x180?text=Power+Protein+Shirt" alt="Merch">
+      <h3>Logo T-Shirt</h3>
+      <p>Soft cotton, black/white</p>
+    </div>
+
+    <div class="product other">
+      <img src="https://via.placeholder.com/250x180?text=Protein+Cookie" alt="Other">
+      <h3>Peanut Butter Cookie</h3>
+      <p>18g protein, vegan</p>
+    </div>
+  </section>
+
+  <footer>
+    <p>© 2025 Power Protein. All rights reserved.</p>
+  </footer>
+
+  <script>
+    function filterProducts(category) {
+      const products = document.querySelectorAll('.product');
+      products.forEach(product => {
+        if (category === 'all') {
+          product.style.display = 'block';
+        } else {
+          product.style.display = product.classList.contains(category) ? 'block' : 'none';
+        }
+      });
+    }
+  </script>
+
+</body>
+</html>
